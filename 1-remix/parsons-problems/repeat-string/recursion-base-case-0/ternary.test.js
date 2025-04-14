@@ -17,11 +17,27 @@
 
 */
 
-// prettier-ignore
-const repeatString = (text = '', repetitions = 1, repeated = '') =>
-  repetitions === 0
-    ? repeated
-    : repeatString(text, repetitions - 1, repeated + text);
+/**
+ * repeat string
+ * 
+ * @param {string} - [text=''] - string which is repeated
+ * @param {number} - [repetitions=1] - the number of repetitions
+ * 
+ * @return {string} - returne repeated string
+ */
 
-? '' // distractor
-: repeatString(text, repetitions - 1); // distractor
+// prettier-ignore
+const repeatString = (text = '', repetitions = 1) =>
+  repetitions === 0
+    ? ''
+    : text + repeatString(text, repetitions - 1);
+
+
+describe('repeat string', ()=>{
+  it('"do" => "do", "do"', ()=>{
+    expect(repeatString('do')).toEqual('do','do');
+  });
+  it('"hello" => "hello", "hello"', ()=>{
+    expect(repeatString('hello')).toEqual("hello", "hello");
+  });
+})

@@ -15,6 +15,15 @@
 
 */
 
+/**
+ * repeat string
+ * 
+ * @param {string} - [text=''] - string which is repeated
+ * @param {number} - [repetitions=1] - the number of repetitions
+ * 
+ * @return {string} - returne repeated string
+ */
+
 const repeatString = (text = '', repetitions = 1) => {
   let repeatedText = '';
   let count = 0;
@@ -25,8 +34,17 @@ const repeatString = (text = '', repetitions = 1) => {
   return repeatedText;
 };
 
-count+; // distractor
-const count = 0; // distractor
-const repeatedText = ''; // distractor
+// count+; // distractor
+// const count = 0; // distractor
+// const repeatedText = ''; // distractor
 
-const repeatString = (text: '', repetitions: 1) => { // distractor
+// const repeatString = (text: '', repetitions: 1) => { // distractor
+
+describe('repeat string', ()=>{
+  it('"do" => "do", "do"', ()=>{
+    expect(repeatString('do')).toEqual('do','do');
+  });
+  it('"hello" => "hello", "hello"', ()=>{
+    expect(repeatString('hello')).toEqual("hello", "hello");
+  });
+})

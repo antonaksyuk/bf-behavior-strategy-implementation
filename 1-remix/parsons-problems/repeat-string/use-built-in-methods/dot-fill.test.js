@@ -9,12 +9,26 @@
 
 */
 
+/**
+ * repeat string
+ * 
+ * @param {string} - [text=''] - string which is repeated
+ * @param {number} - [repetitions=1] - the number of repetitions
+ * 
+ * @return {string} - returne repeated string
+ */
+
 const repeatString = (text = '', repetitions = 1) => {
     const oneEntryPerRepetition = Array(repetitions).fill(text);
     const repeatedString = oneEntryPerRepetition.join('');
     return repeatedString;
 };
 
-return Array(repetitions).fill(text); // distractor
-const repeatedString = Array(repetitions).fill(text); // distractor
-const oneEntryPerRepetition = repeatedString.join(''); // distractor
+describe('repeat string', ()=>{
+  it('"do" => "do", "do"', ()=>{
+    expect(repeatString('do')).toEqual('do','do');
+  });
+  it('"hello" => "hello", "hello"', ()=>{
+    expect(repeatString('hello')).toEqual("hello", "hello");
+  });
+})
