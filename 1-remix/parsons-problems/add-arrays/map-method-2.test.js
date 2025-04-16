@@ -2,10 +2,10 @@
 
 /**
  * add two arrays
- * 
+ *
  * @param {array} - [arr1=[]] the first array
  * @param {array} - [arr2=[]] the second array
- * 
+ *
  * @return {array} return added arrays
  */
 
@@ -15,10 +15,10 @@ const addArrays = (arr1, arr2) => {
 };
 
 describe('add two arrays', () => {
-  it('[3, 5] [7, 7] => [10, 12]', ()=> {
-    expect(addArrays([3, 5], [7, 7])).toEqual([10, 12]);
-  });
-  it('[98, 9] [45, 65] => [143, 74]', ()=>{
-    expect(addArrays([98, 9], [45, 65])).toEqual([143, 74]);
-  })
-})
+    it('[3, 5] [7, 7] => [10, 12]', () => {
+        expect(addArrays([3, 5], [7, 7])).toEqual([10, 12]);
+    });
+    it('[98, 9] [45, 65] => [143, 74]', () => {
+        expect(addArrays([98, 9], [45, 65])).toEqual([143, 74]);
+    });
+});

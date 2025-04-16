@@ -4,32 +4,31 @@
 
 /**
  * remove exlamion mark
- * 
+ *
  * @param {string} - string which  includes exlamation mark
- * 
+ *
  * @return {string} - return string without exlamation mark
  */
 
 function removeExclamationMarks(s) {
-  var arr = s.split('');
-  arr = arr.filter(function (item) {
-    return item !== '!';
-  });
-  return arr.join('');
+    var arr = s.split('');
+    arr = arr.filter(function (item) {
+        return item !== '!';
+    });
+    return arr.join('');
 }
 
 describe('Remove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('"!hello!" => "hello"', () => {
-    expect(removeExclamationMarks('!hello!')).toEqual('hello');
-  });
-  it('"do!do7" => "dodo7"', () => {
-    expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('"!hello!" => "hello"', () => {
+        expect(removeExclamationMarks('!hello!')).toEqual('hello');
+    });
+    it('"do!do7" => "dodo7"', () => {
+        expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
+    });
 });
-
 
 // arr.filter(function (e) { // distractor
 // var arr = s.join(''); // distractor

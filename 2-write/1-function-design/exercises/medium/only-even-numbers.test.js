@@ -12,9 +12,30 @@
 // -------- your solutions --------
 
 for (const solution of [secretSolution]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
+    describe(solution.name + ': removes odd numbers', () => {
+        describe('correctly filters an array', () => {
+            it('an empty array returns an empty array', () => {
+                const actual = solution([]);
+                expect(actual).toEqual([]);
+            });
+            it('keeps all entries when all are even', () => {
+                const actual = solution([2, 4, 6]);
+                expect(actual).toEqual([2, 4, 6]);
+            });
+            it('removes all odd numbers', () => {
+                const actual = solution([1, 2, 3, 4]);
+                expect(actual).toEqual([2, 4]);
+            });
+            it('removes only odd numbers', () => {
+                const actual = solution([1, 2, 3, 4, 5, 6]);
+                expect(actual).toEqual([2, 4, 6]);
+            });
+            it('does not modify the original array', () => {
+                const input = [1, 2, 3, 4];
+                const actual = solution(input);
+                expect(input).toEqual([1, 2, 3, 4]);
+                expect(actual).toEqual([2, 4]);
+            });
         });
     });
 }

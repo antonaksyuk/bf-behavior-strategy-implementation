@@ -25,25 +25,47 @@ for (const solution of [secretSolution]) {
                     expect(solution()).toEqual('');
                 });
             });
-            // write the tests indicated by the comments
+
             describe('when set to lower case', () => {
-                // when the text is an empty string
-                it(_, () => {
-                    expect(solution(_, _)).toEqual(_);
+                it('when the text is an empty string', () => {
+                    expect(solution('', true)).toEqual('');
                 });
-                // when the text is all upper case
-                // when the text is all lower case
-                // when the text is mixed upper and lower case
-                // when the text contains punctuation
-                // when the text contains numbers
+                it('when the text is all upper case', () => {
+                    expect(solution('HELLO', true)).toEqual('olleh');
+                });
+                it('when the text is all lower case', () => {
+                    expect(solution('world', true)).toEqual('dlrow');
+                });
+                it('when the text is mixed upper and lower case', () => {
+                    expect(solution('HeLLo', true)).toEqual('olleh');
+                });
+                it('when the text contains punctuation', () => {
+                    expect(solution('Hi!', true)).toEqual('!ih');
+                });
+                it('when the text contains numbers', () => {
+                    expect(solution('123abc', true)).toEqual('cba321');
+                });
             });
+
             describe('when set to upper case', () => {
-                // when the text is an empty string
-                // when the text is all upper case
-                // when the text is all lower case
-                // when the text is mixed upper and lower case
-                // when the text contains punctuation
-                // when the text contains numbers
+                it('when the text is an empty string', () => {
+                    expect(solution('', false)).toEqual('');
+                });
+                it('when the text is all upper case', () => {
+                    expect(solution('HELLO', false)).toEqual('OLLEH');
+                });
+                it('when the text is all lower case', () => {
+                    expect(solution('world', false)).toEqual('DLROW');
+                });
+                it('when the text is mixed upper and lower case', () => {
+                    expect(solution('HeLLo', false)).toEqual('OLLEH');
+                });
+                it('when the text contains punctuation', () => {
+                    expect(solution('Hi!', false)).toEqual('!IH');
+                });
+                it('when the text contains numbers', () => {
+                    expect(solution('123abc', false)).toEqual('CBA321');
+                });
             });
         },
     );

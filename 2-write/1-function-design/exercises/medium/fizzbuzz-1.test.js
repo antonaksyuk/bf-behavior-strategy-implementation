@@ -29,10 +29,15 @@ for (const solution of [secretSolution]) {
             it('2 -> 2', () => {
                 expect(solution(2)).toEqual(2);
             });
-            // write more tests in this category
+            it('7 -> 7', () => {
+                expect(solution(7)).toEqual(7);
+            });
+            it('8 -> 8', () => {
+                expect(solution(8)).toEqual(8);
+            });
         });
 
-        describe('only divisible by only 3', () => {
+        describe('only divisible by 3', () => {
             const expectedValue = 'fizz';
             it('3 -> "fizz"', () => {
                 expect(solution(3)).toEqual(expectedValue);
@@ -40,10 +45,12 @@ for (const solution of [secretSolution]) {
             it('6 -> "fizz"', () => {
                 expect(solution(6)).toEqual(expectedValue);
             });
-            // write more tests in this category
+            it('9 -> "fizz"', () => {
+                expect(solution(9)).toEqual(expectedValue);
+            });
         });
 
-        describe('only divisible by only 5', () => {
+        describe('only divisible by 5', () => {
             const expectedValue = 'buzz';
             it('5 -> "buzz"', () => {
                 expect(solution(5)).toEqual(expectedValue);
@@ -51,7 +58,9 @@ for (const solution of [secretSolution]) {
             it('10 -> "buzz"', () => {
                 expect(solution(10)).toEqual(expectedValue);
             });
-            // write more tests in this category
+            it('20 -> "buzz"', () => {
+                expect(solution(20)).toEqual(expectedValue);
+            });
         });
 
         describe('divisible by 5 and 3', () => {
@@ -62,7 +71,9 @@ for (const solution of [secretSolution]) {
             it('30 -> "fizzbuzz"', () => {
                 expect(solution(30)).toEqual(expectedValue);
             });
-            // write more tests in this category
+            it('45 -> "fizzbuzz"', () => {
+                expect(solution(45)).toEqual(expectedValue);
+            });
         });
     });
 }

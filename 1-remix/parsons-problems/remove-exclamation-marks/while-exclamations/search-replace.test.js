@@ -2,19 +2,19 @@
 
 /* this exercise has 2 distractors */
 
-  /**
-   * remove exlamion mark
-   *
-   * @param {string} - string which  includes exlamation mark
-   *
-   * @return {string} - return string without exlamation mark
-   */
+/**
+ * remove exlamion mark
+ *
+ * @param {string} - string which  includes exlamation mark
+ *
+ * @return {string} - return string without exlamation mark
+ */
 
 function removeExclamationMarks(s) {
-  while (s.search('!') >= 0) {
-    s = s.replace('!', '');
-  }
-  return s;
+    while (s.search('!') >= 0) {
+        s = s.replace('!', '');
+    }
+    return s;
 }
 
 // s = s.replace('', '!'); // distractor
@@ -22,13 +22,13 @@ function removeExclamationMarks(s) {
 // while (s.search('!') !== 0) { // distractor
 
 describe('Remove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('"!hello!" => "hello"', () => {
-    expect(removeExclamationMarks('!hello!')).toEqual('hello');
-  });
-  it('"do!do7" => "dodo7"', () => {
-    expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('"!hello!" => "hello"', () => {
+        expect(removeExclamationMarks('!hello!')).toEqual('hello');
+    });
+    it('"do!do7" => "dodo7"', () => {
+        expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
+    });
 });

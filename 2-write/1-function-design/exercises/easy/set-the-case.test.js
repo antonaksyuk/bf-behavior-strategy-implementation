@@ -17,31 +17,53 @@ for (const solution of [secretSolution]) {
     describe(solution.name + ': sets a text to lower or upper case', () => {
         describe("the function's default parameters", () => {
             it('second parameter defaults to true', () => {
-                expect(solution('asdf')).toEqual('asdf');
+                expect(solution('ASDF')).toEqual('asdf');
             });
             it('first parameter defaults to an empty string', () => {
                 expect(solution()).toEqual('');
             });
         });
-        // write the tests indicated by the comments
+
         describe('when set to lower case', () => {
-            // when the text is an empty string
-            it(_, () => {
-                expect(solution(_, _)).toEqual(_);
+            it('returns "" when input is empty', () => {
+                expect(solution('', true)).toEqual('');
             });
-            // when the text is all upper case
-            // when the text is all lower case
-            // when the text is mixed upper and lower case
-            // when the text contains punctuation
-            // when the text contains numbers
+            it('converts all uppercase to lowercase', () => {
+                expect(solution('HELLO', true)).toEqual('hello');
+            });
+            it('leaves lowercase unchanged', () => {
+                expect(solution('world', true)).toEqual('world');
+            });
+            it('converts mixed case to lowercase', () => {
+                expect(solution('HeLLo', true)).toEqual('hello');
+            });
+            it('preserves punctuation', () => {
+                expect(solution('Hi!', true)).toEqual('hi!');
+            });
+            it('preserves numbers', () => {
+                expect(solution('A1B2', true)).toEqual('a1b2');
+            });
         });
+
         describe('when set to upper case', () => {
-            // when the text is an empty string
-            // when the text is all upper case
-            // when the text is all lower case
-            // when the text is mixed upper and lower case
-            // when the text contains punctuation
-            // when the text contains numbers
+            it('returns "" when input is empty', () => {
+                expect(solution('', false)).toEqual('');
+            });
+            it('leaves uppercase unchanged', () => {
+                expect(solution('HELLO', false)).toEqual('HELLO');
+            });
+            it('converts lowercase to uppercase', () => {
+                expect(solution('world', false)).toEqual('WORLD');
+            });
+            it('converts mixed case to uppercase', () => {
+                expect(solution('HeLLo', false)).toEqual('HELLO');
+            });
+            it('preserves punctuation', () => {
+                expect(solution('Hi!', false)).toEqual('HI!');
+            });
+            it('preserves numbers', () => {
+                expect(solution('a1b2', false)).toEqual('A1B2');
+            });
         });
     });
 }

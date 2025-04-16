@@ -12,9 +12,30 @@
 // -------- your solutions --------
 
 for (const solution of [secretSolution]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
+    describe(solution.name + ': reverses and combines strings', () => {
+        describe('correctly handles the array of strings', () => {
+            it('returns an empty string when the array is empty', () => {
+                const actual = solution([]);
+                expect(actual).toEqual('');
+            });
+            it('returns the combined string in reverse order', () => {
+                const actual = solution(['hello', 'world']);
+                expect(actual).toEqual('worldhello');
+            });
+            it('does not modify the original array', () => {
+                const input = ['hello', 'world'];
+                const actual = solution(input);
+                expect(input).toEqual(['hello', 'world']);
+                expect(actual).toEqual('worldhello');
+            });
+            it('works with a single string in the array', () => {
+                const actual = solution(['test']);
+                expect(actual).toEqual('test');
+            });
+            it('works with more than two strings', () => {
+                const actual = solution(['a', 'b', 'c']);
+                expect(actual).toEqual('cba');
+            });
         });
     });
 }

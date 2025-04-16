@@ -17,13 +17,13 @@ let removeExclamationMarks = (s) => s.replace(/!/g, '');
 // let removeExclamationMarks => (s) = s.replace(/!/g, ''); // distractor
 
 describe('Remove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('"!hello!" => "hello"', () => {
-    expect(removeExclamationMarks('!hello!')).toEqual('hello');
-  });
-  it('"do!do7" => "dodo7"', () => {
-    expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('"!hello!" => "hello"', () => {
+        expect(removeExclamationMarks('!hello!')).toEqual('hello');
+    });
+    it('"do!do7" => "dodo7"', () => {
+        expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
+    });
 });

@@ -15,11 +15,51 @@
 // -------- your solutions --------
 
 for (const solution of [secretSolution]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
-        });
-    });
+    describe(
+        solution.name + ': converts an array of strings to numbers',
+        () => {
+            describe('when the array contains valid number strings', () => {
+                it('should return an array with converted numbers', () => {
+                    const actual = solution(['1', '2', '3']);
+                    expect(actual).toEqual([1, 2, 3]);
+                });
+            });
+
+            describe('when the array contains invalid number strings', () => {
+                it('should return an array without NaN values', () => {
+                    const actual = solution(['1', 'a', '2', '.']);
+                    expect(actual).toEqual([1, 2]);
+                });
+            });
+
+            describe('when the array contains only non-numeric strings', () => {
+                it('should return an empty array', () => {
+                    const actual = solution(['a', 'b', 'c']);
+                    expect(actual).toEqual([]);
+                });
+            });
+
+            describe('when the array contains mixed valid and invalid strings', () => {
+                it('should return only valid number strings as numbers', () => {
+                    const actual = solution(['1', 'invalid', '2', '3.5']);
+                    expect(actual).toEqual([1, 2, 3.5]);
+                });
+            });
+
+            describe('when the array is empty', () => {
+                it('should return an empty array', () => {
+                    const actual = solution([]);
+                    expect(actual).toEqual([]);
+                });
+            });
+
+            describe('when the input is not an array', () => {
+                it('should throw an error', () => {
+                    expect(() => solution('string')).toThrowError(TypeError);
+                });
+            });
+        },
+    );
 }
 
 // minified solution for testing your tests

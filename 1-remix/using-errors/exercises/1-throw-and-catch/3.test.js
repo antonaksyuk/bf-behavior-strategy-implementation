@@ -4,20 +4,21 @@
 
 console.log('- broken JS -');
 try {
-    const userAge = 12;
-    for (const year of userAge) {
-        console.log(year);
-    }
+    const stringVariable = 'hello!';
+    stringVariable();
 } catch (err) {
     console.error(err);
 }
 
 console.log('- throw new error -');
 try {
-    throw __;
+    throw new TypeError('stringVariable is not a function');
 } catch (err) {
     console.error(err);
 
     console.assert(err.name === 'TypeError', 'name fail');
-    console.assert(err.message === 'userAge is not iterable', 'message fail');
+    console.assert(
+        err.message === 'stringVariable is not a function',
+        'message fail',
+    );
 }

@@ -16,31 +16,31 @@
 
 /**
  * repeat string
- * 
+ *
  * @param {string} - [text=''] - string which is repeated
  * @param {number} - [repetitions=1] - the number of repetitions
- * 
+ *
  * @return {string} - returne repeated string
  */
 
 const repeatString = (text = '', repetitions = 1) => {
-  const finalLength = text.length * repetitions;
-  let repeatedText = '';
-  while (repeatedText.length < finalLength) {
-    repeatedText += text;
-  }
-  return repeatedText;
+    const finalLength = text.length * repetitions;
+    let repeatedText = '';
+    while (repeatedText.length < finalLength) {
+        repeatedText += text;
+    }
+    return repeatedText;
 };
 
 // while (repeatedText.length <= finalLength) { // distractor
 // repeatedText + text; // distractor
 // const repeatedText = ''; // distractor
 
-describe('repeat string', ()=>{
-  it('"do" => "do", "do"', ()=>{
-    expect(repeatString('do')).toEqual('do','do');
-  });
-  it('"hello" => "hello", "hello"', ()=>{
-    expect(repeatString('hello')).toEqual("hello", "hello");
-  });
-})
+describe('repeat string', () => {
+    it('"do" => "do", "do"', () => {
+        expect(repeatString('do')).toEqual('do', 'do');
+    });
+    it('"hello" => "hello", "hello"', () => {
+        expect(repeatString('hello')).toEqual('hello', 'hello');
+    });
+});

@@ -4,20 +4,20 @@
 
 /**
  * remoove exlamation mark
- * 
+ *
  * @param {string} - string which is contains exlamation mark(s)
- * 
+ *
  * @return {string} - string without exlamation marks
  */
 
 function removeExclamationMarks(s) {
-  var newString = '';
-  for (let i = 0; i < s.length; i++) {
-    if (s[i] != '!') {
-      newString += s[i];
+    var newString = '';
+    for (let i = 0; i < s.length; i++) {
+        if (s[i] != '!') {
+            newString += s[i];
+        }
     }
-  }
-  return newString;
+    return newString;
 }
 
 // newString = s[i]; // distractor
@@ -27,13 +27,13 @@ function removeExclamationMarks(s) {
 // }
 
 describe('remoove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('" run!" => "run"', () => {
-    expect(removeExclamationMarks('run!')).toEqual('run');
-  });
-  it('"he!llo" => "hello"', () => {
-    expect(removeExclamationMarks('he!llo')).toEqual('hello');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('" run!" => "run"', () => {
+        expect(removeExclamationMarks('run!')).toEqual('run');
+    });
+    it('"he!llo" => "hello"', () => {
+        expect(removeExclamationMarks('he!llo')).toEqual('hello');
+    });
 });

@@ -10,19 +10,19 @@
  */
 
 function removeExclamationMarks(s) {
-  while (s.includes('!')) {
-    let index = s.indexOf('!');
-    s = s.slice(0, index).concat(s.slice(index + 1, s.length));
-  }
+    while (s.includes('!')) {
+        let index = s.indexOf('!');
+        s = s.slice(0, index).concat(s.slice(index + 1, s.length));
+    }
 
-  return s;
+    return s;
 }
 
 // s.slice(0, index).concat(s.slice(index + 1, s.length)); // distractor
 // let s = s.slice(0, index).concat(s.slice(index + 1, s.length)); // distractor
 
 describe('delete exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
 });

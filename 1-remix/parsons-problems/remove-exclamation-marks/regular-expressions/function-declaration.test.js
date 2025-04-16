@@ -11,7 +11,7 @@
  */
 
 function removeExclamationMarks(s) {
-  return s.replace(/!/gi, '');
+    return s.replace(/!/gi, '');
 }
 
 // var function removeExclamationMarks(s) { // distractor
@@ -19,13 +19,13 @@ function removeExclamationMarks(s) {
 // function removeExclamationMarks(s) => { // distractor
 
 describe('Remove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('"!hello!" => "hello"', () => {
-    expect(removeExclamationMarks('!hello!')).toEqual('hello');
-  });
-  it('"do!do7" => "dodo7"', () => {
-    expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('"!hello!" => "hello"', () => {
+        expect(removeExclamationMarks('!hello!')).toEqual('hello');
+    });
+    it('"do!do7" => "dodo7"', () => {
+        expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
+    });
 });

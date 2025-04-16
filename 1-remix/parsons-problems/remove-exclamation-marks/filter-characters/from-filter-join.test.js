@@ -11,23 +11,23 @@
  */
 
 function removeExclamationMarks(s) {
-  const result = Array.from(s).filter((element) => {
-    return element !== '!';
-  });
-  return result.join('');
+    const result = Array.from(s).filter((element) => {
+        return element !== '!';
+    });
+    return result.join('');
 }
 
 // element !== '!'; // distractor
 // const result = s.filter((element) => { // distractor
 
 describe('Remove exlamation mark', () => {
-  it('"hello!" => "hello"', () => {
-    expect(removeExclamationMarks('hello!')).toEqual('hello');
-  });
-  it('"!hello!" => "hello"', () => {
-    expect(removeExclamationMarks('!hello!')).toEqual('hello');
-  });
-  it('"do!do7" => "dodo7"', () => {
-    expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
-  });
+    it('"hello!" => "hello"', () => {
+        expect(removeExclamationMarks('hello!')).toEqual('hello');
+    });
+    it('"!hello!" => "hello"', () => {
+        expect(removeExclamationMarks('!hello!')).toEqual('hello');
+    });
+    it('"do!do7" => "dodo7"', () => {
+        expect(removeExclamationMarks('do!do7')).toEqual('dodo7');
+    });
 });

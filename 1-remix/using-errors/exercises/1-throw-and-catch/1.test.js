@@ -4,21 +4,17 @@
 
 console.log('- broken JS -');
 try {
-    const stringVariable = 'hello!';
-    stringVariable();
+    null();
 } catch (err) {
     console.error(err);
 }
 
 console.log('- throw new error -');
 try {
-    throw __;
+    throw TypeError('null is not a function');
 } catch (err) {
     console.error(err);
 
     console.assert(err.name === 'TypeError', 'name fail');
-    console.assert(
-        err.message === 'stringVariable is not a function',
-        'message fail',
-    );
+    console.assert(err.message === 'null is not a function', 'message fail');
 }

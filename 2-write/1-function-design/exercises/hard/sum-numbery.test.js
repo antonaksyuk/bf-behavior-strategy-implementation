@@ -14,25 +14,44 @@
 
 const mapFilterReduce = (arr) => {
     // these work, you need to pass them to the right array methods
+
     const isNotNaN = (entry) => !Number.isNaN(entry);
     const sumNumbers = (acc, next) => acc + next;
     const castToNumber = (entry) => Number(entry);
 
-    // fill in the array methods and pass in the correct logic
-    const sumOfNumberies = arr._(_)._(_)._(_, _);
+    const sumOfNumberies = arr
+        .map(castToNumber)
+        .filter(isNotNaN)
+        .reduce(sumNumbers, 0);
 
     return sumOfNumberies;
 };
 
 // -------- your solutions --------
 
-for (const solution of [
-    secretSolution,
-    // mapFilterReduce,
-]) {
-    describe(solution.name + ': _', () => {
-        describe('_', () => {
-            it('_', () => {});
+for (const solution of [mapFilterReduce]) {
+    describe(solution.name + ': sums all numbery strings', () => {
+        describe('correctly sums an array', () => {
+            it('returns 0 for an empty array', () => {
+                const actual = solution([]);
+                expect(actual).toEqual(0);
+            });
+            it('sums numbers correctly', () => {
+                const actual = solution(['1', '2', '3']);
+                expect(actual).toEqual(6); // 1 + 2 + 3
+            });
+            it('ignores non-number strings', () => {
+                const actual = solution(['1', 'e', '3']);
+                expect(actual).toEqual(4); // 1 + 3
+            });
+            it('handles arrays with only non-number strings', () => {
+                const actual = solution(['e', 'x']);
+                expect(actual).toEqual(0); // нет чисел
+            });
+            it('handles arrays with mixed valid and invalid numbers', () => {
+                const actual = solution(['1', '2', 'foo', '4']);
+                expect(actual).toEqual(7); // 1 + 2 + 4
+            });
         });
     });
 }
